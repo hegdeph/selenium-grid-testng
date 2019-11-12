@@ -20,7 +20,8 @@ pipeline{
         stage('run unit test'){
             steps{
                 dir('test'){
-                    sh 'yum install maven'
+                    sh 'uname -a'
+                    sh 'apt install maven'
                     sh 'mvn clean -P chrome,grid,localhost test'
                 }
             }
