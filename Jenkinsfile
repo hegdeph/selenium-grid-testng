@@ -22,14 +22,7 @@ pipeline{
                 dir('test'){
                     sh 'pwd'
                     
-                    sh 'uname -a'
-                    sh 'apt-get update'
-                    sh 'apt-get install -y maven'
-                    
-                    sh 'cd /var/jenkins_home/workspace/sele-maven'
-                    sh 'pwd'
-                    sh 'cd ..'
-                    sh 'ls -lrt'
+                    sh 'ls -lrt /var/jenkins_home/workspace/sele-maven/'
                     sh 'mvn clean -P chrome,grid,localhost test1'
                 }
             }
