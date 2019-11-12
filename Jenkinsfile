@@ -23,6 +23,7 @@ pipeline{
                     sh 'uname -a'
                     sh 'apt-get update'
                     sh 'apt-get install -y maven'
+                    sh 'ls -lrt'
                     sh 'mvn clean -P chrome,grid,localhost test'
                 }
             }
