@@ -25,8 +25,9 @@ pipeline{
                     sh 'uname -a'
                     sh 'apt-get update'
                     sh 'apt-get install -y maven'
-                    sh 'pwd'
+                    
                     sh 'cd /var/jenkins_home/workspace/selenium 3'
+                    sh 'pwd'
                     sh 'ls -lrt'
                     sh 'mvn clean -P chrome,grid,localhost test'
                 }
