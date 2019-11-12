@@ -28,6 +28,7 @@ pipeline{
                     
                     sh 'cd /var/jenkins_home/workspace/sele-maven'
                     sh 'pwd'
+                    sh 'cd ..'
                     sh 'ls -lrt'
                     sh 'mvn clean -P chrome,grid,localhost test1'
                 }
