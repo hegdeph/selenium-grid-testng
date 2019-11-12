@@ -20,6 +20,8 @@ pipeline{
         stage('run unit test'){
             steps{
                 dir('test'){
+                    sh 'pwd'
+                    sh 'find / -name pom.xml'
                     sh 'uname -a'
                     sh 'apt-get update'
                     sh 'apt-get install -y maven'
