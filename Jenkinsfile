@@ -21,12 +21,12 @@ pipeline{
             steps{
                 dir('test'){
                     sh 'pwd'
-                    sh 'find / -name pom.xml'
+                    
                     sh 'uname -a'
                     sh 'apt-get update'
                     sh 'apt-get install -y maven'
                     sh 'pwd'
-                    sh 'cd ..'
+                    sh 'cd /var/jenkins_home/workspace/selenium 3'
                     sh 'ls -lrt'
                     sh 'mvn clean -P chrome,grid,localhost test'
                 }
