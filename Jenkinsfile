@@ -21,6 +21,7 @@ pipeline{
             steps{
                 dir('test'){
                     sh 'uname -a'
+                    sh 'apt-get update'
                     sh 'apt-get install maven'
                     sh 'mvn clean -P chrome,grid,localhost test'
                 }
