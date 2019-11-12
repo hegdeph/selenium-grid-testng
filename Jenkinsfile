@@ -22,7 +22,7 @@ pipeline{
                 dir('test'){
                     sh 'uname -a'
                     sh 'apt-get update'
-                    sh 'apt-get install maven'
+                    sh 'apt-get install -y maven'
                     sh 'mvn clean -P chrome,grid,localhost test'
                 }
             }
