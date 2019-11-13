@@ -1,35 +1,53 @@
 package org.nottyo.samples.testsuites;
 
-import org.nottyo.samples.TestNgTestBase;
-import org.openqa.selenium.support.PageFactory;
-
-import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import org.testng.annotations.BeforeTest;
 
-import org.nottyo.samples.pages.HomePage;
+import java.net.MalformedURLException;
+import java.net.URL;
 
-public class SampleTestNgTest extends TestNgTestBase {
+import org.openqa.selenium.WebDriver;
 
-  private HomePage homepage;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 
-  @BeforeMethod
-  public void initPageObjects() {
-    homepage = PageFactory.initElements(driver, HomePage.class);
-  }
+public class NewTest {
+	private WebDriver driver;	
+	private static DesiredCapabilities capabillities;
+	 private static Wait<WebDriver> wait;
+	 
+	  @Test
+	  public void f() {
+		  driver.get("http://demo.guru99.com/test/guru99home/");  
+			String title = driver.getTitle();				 
+			Assert.assertTrue(title.contains("Demo Guru99 Page")); 	
+	  }
+	  @BeforeTest
+	  public void beforeTest() throws MalformedURLException {
+		  
+//		  //driver = new ChromeDriver();  
+//		  
+		  capabillities = DesiredCapabilities.firefox();
+		  
+		    /** URL is the selenium hub URL here **/
+		    driver = new RemoteWebDriver(new URL("http://35.240.214.232//wd/hub"), capabillities);
+		   
+		    capabillities.setBrowserName("firefox"); 
+		    wait = new WebDriverWait(driver, 6000);
+		    
+		    if(driver != null)
+		    	System.out.println("Obtained the driver");
+		  
+		  System.out.println("Obtained the driver");
+	  }
 
-  @Test
-  public void testHomePageHasAHeader() {
-    driver.get(baseUrl);
-    Assert.assertFalse("".equals(homepage.getTitle()));
-  }
+	  @AfterTest
+	  public void afterTest() {
+		  driver.quit();
+	  }
 
-  @Test
-  public void testBlogNone(){
-    driver.get("http://www.google.com");
-    String title = driver.getTitle();	
-    System.out.println("Title is.." + title);
-    Assert.assertTrue(title.contains("Google")); 	
-    //Assert.assertNotNull(driver.getTitle());
-  }
 }
