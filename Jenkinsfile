@@ -62,7 +62,7 @@ spec:
                     sh 'echo $NODE_IP'
                  }
                 container ('mvn'){
-                    sh 'mvn clean -Dparam=1234 -P chrome,grid,localhost test'
+                    sh 'mvn clean  -P chrome,grid,localhost test'
                 
             }
             }
