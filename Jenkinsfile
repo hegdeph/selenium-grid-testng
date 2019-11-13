@@ -18,8 +18,9 @@ pipeline{
         
     
         stage('run unit test'){
-            container('kubectl'){
+           
             steps{
+                 container('kubectl'){
                     sh 'NODE_IP=$(kubectl get svc --namespace default selenium-grid-selenium-hub -o jsonpath="{.status.loadBalancer.ingress[0].ip}")'
                     sh 'echo $NODE_IP'
                     sh 'mvn clean -Dparam=1234 -P chrome,grid,localhost test'
