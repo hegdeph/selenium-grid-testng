@@ -34,7 +34,7 @@ public class NewTest {
 		  capabillities = DesiredCapabilities.firefox();
 		  
 		    /** URL is the selenium hub URL here **/
-		    driver = new RemoteWebDriver(new URL("http://35.240.214.232//wd/hub"), capabillities);
+		    driver = new RemoteWebDriver(new URL("http://35.247.181.253/wd/hub"), capabillities);
 		   
 		    capabillities.setBrowserName("firefox"); 
 		    wait = new WebDriverWait(driver, 6000);
