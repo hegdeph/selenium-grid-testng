@@ -23,7 +23,7 @@ pipeline{
                     sh 'pwd'
                     
                     sh 'ls -lrt /var/jenkins_home/workspace/sele-maven/'
-                    sh 'mvn clean -P chrome,grid,localhost test'
+                    sh 'mvn clean -Dparam=1234 -P chrome,grid,localhost test'
                 
             }
         }
