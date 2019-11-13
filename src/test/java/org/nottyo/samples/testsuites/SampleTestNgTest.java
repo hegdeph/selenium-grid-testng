@@ -15,7 +15,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 
-public class NewTest {
+public class SampleTestNgTest {
 	private WebDriver driver;	
 	private static DesiredCapabilities capabillities;
 	 private static Wait<WebDriver> wait;
