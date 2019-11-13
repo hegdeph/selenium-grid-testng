@@ -24,8 +24,8 @@ spec:
     command:
     - cat
     tty: true
-  - name: dotnet
-    image: mcr.microsoft.com/dotnet/core/sdk:2.1
+  - name: maven
+    image: gcr.io/cloud-builders/maven
     command:
     - cat
     tty: true    
