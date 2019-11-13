@@ -24,8 +24,8 @@ spec:
     command:
     - cat
     tty: true
-  - name: maven
-    image: hub.docker.com/_/maven
+  - name: mvn
+    image: gcr.io/cloud-builders/mvn
     command:
     - cat
     tty: true    
