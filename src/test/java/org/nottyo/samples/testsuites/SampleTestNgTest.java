@@ -32,7 +32,7 @@ public class SampleTestNgTest {
 		  
 //		  //driver = new ChromeDriver();  
 //		  
-		  String param = System.getProperty(‘Param’);
+		  String param = System.getProperty("param");
 		  System.out.println("Parameter is.. "+param);
 		  capabillities = DesiredCapabilities.firefox();
 		  
