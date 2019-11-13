@@ -26,7 +26,10 @@ public class SampleTestNgTest extends TestNgTestBase {
 
   @Test
   public void testBlogNone(){
-    driver.get("https://www.blognone.com");
-    Assert.assertNotNull(driver.getTitle());
+    driver.get("http://www.google.com");
+    String title = driver.getTitle();	
+    System.out.println("Title is.." + title);
+    Assert.assertTrue(title.contains("Google")); 	
+    //Assert.assertNotNull(driver.getTitle());
   }
 }
