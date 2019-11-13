@@ -22,7 +22,8 @@ pipeline{
            
             steps{
                  
-                
+                    sh 'apt-get install maven'
+                    sh 'apt update'
                     sh 'mvn clean  -P chrome,grid,localhost test'
                 
             
