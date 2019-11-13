@@ -11,18 +11,7 @@ import org.testng.annotations.Test;
 /**
  * Created by traitanit on 7/28/2017 AD.
  */
-public class SampleTestNgTest2 extends TestNgTestBase {
+public class SampleTestNgTest2  {
 
-    @Test
-    public void testOpenGoogle() {
-        driver.get("https://www.google.co.th");
-        Assert.assertNotNull(driver.getTitle());
-    }
-
-    @Test
-    public void testOpenMedium() {
-        driver.get("https://www.medium.com");
-        Assert.assertNotNull(driver.getTitle());
-    }
 
 }
