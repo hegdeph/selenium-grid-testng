@@ -32,6 +32,8 @@ public class SampleTestNgTest {
 		  
 //		  //driver = new ChromeDriver();  
 //		  
+		  String param = System.getProperty(‘Param’);
+		  System.out.println("Parameter is.. "+param);
 		  capabillities = DesiredCapabilities.firefox();
 		  
 		    /** URL is the selenium hub URL here **/
