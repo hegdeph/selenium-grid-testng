@@ -56,7 +56,7 @@ stages {
             steps{
 		    container('mvn'){
 				
-                   		 sh 'mvn  clean test'
+                   		 sh 'mvn test'
 		    }
                 
             
